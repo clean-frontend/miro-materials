@@ -4,6 +4,7 @@
 
 И отредактируем содержимое
 `shared/env.d.ts`
+
 ```tsx
 /// <reference types="vite/client" />
 
@@ -14,12 +15,12 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
-
 ```
 
 **2 Добавляем фасад над переменными окружения**
 
 `src/shared/model/config.ts`
+
 ```ts
 export const CONFIG = {
   API_BASE_URL: import.meta.env.VITE_API_BASE_URL,
@@ -29,10 +30,9 @@ export const CONFIG = {
 **3 Добавляем переменные окружения для разработки**
 
 `.env.development`
+
 ```
-API_BASE_URL=http://localhost:3000
+VITE_API_BASE_URL=http://localhost:3000
 ```
 
 **4 Тестируем `CONFIG.API_BASE_URL`**
-
-
